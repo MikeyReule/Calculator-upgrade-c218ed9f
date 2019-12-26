@@ -1,10 +1,10 @@
 <?php
 
-echo "Please choose your operation: (+, -)", PHP_EOL;
+echo "Please choose your operation: (+, -, *)", PHP_EOL;
 $answer = readline("");
 echo PHP_EOL;
 
-if ($answer == "+" or $answer == "-") {
+if ($answer == "+" or $answer == "-" or $answer == "*") {
 	$num1 = readline("What is your first number?: ");
 } else {
 	echo "'$answer' is not an operation.";
@@ -21,11 +21,16 @@ if (is_numeric($num2)) {
 	if ($answer == "+") {
 		$add = $num1 + $num2;
 		echo "Your answer is: $add", PHP_EOL;
-		exit
-	} else {
-		$sub = $num1 - $num2;
-		echo "Your answer is: $sub", PHP_EOL;
-		exit
+		exit;
+	}
+		{ elseif ($answer == "*")
+			$mult = $num1 * $num2;
+			echo "Your answer is: $mult";
+			exit;
+			} else {
+				$sub = $num1 - $num2;
+				echo "Your answer is: $sub", PHP_EOL;
+				exit;
 	}
 }
 
